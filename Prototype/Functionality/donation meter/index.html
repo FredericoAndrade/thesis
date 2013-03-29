@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="http://fredericoandrade.com/images/favicon.ico">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+        <title>FREDERICO ANDRADE - INTERACTION DESIGNER - Thesis Functionality Protoype 01</title>
+        <script>var goal=40,
+        			current = 14,//monetary value
+                    origin = 175,
+                    radius = 100,
+                    lineW = 150
+        </script>
+    </head>
+
+    <body>
+<div id="overlay">
+        <h1 class="goal">Goal: $<script type="text/javascript">document.write(goal);</script></h1>
+        <canvas   onmousedown="showCoords(event)"  id="canvas" width="350" height="350"></canvas>
+        <h1 class="goal">Funded: $<script type="text/javascript">document.write(current);
+    </script></h1>
+        <h1 id="title">Gift</h1>
+        <input id="input" type="number" min="0" step="1" value='0' /><!--Value does not change based on fill Value-->
+</div>    
+        <script>
+		var canvas = document.getElementById('canvas'),
+            ctx = canvas.getContext('2d'),
+            currentAngle = (current/goal)*360,
+            rot = Math.PI*-.5						
+            document.getElementById("input").addEventListener("change",false)
+
+//constructor
+        function Pie(f){
+            this.f=f//finish angle
+        }
+
+//prototype
+        Pie.prototype.update = function() {
+            this.f += (document.getElementById("input").value - this.f) / 5;
+            this.f == (document.getElementById("canvas").onmousedown.value - this.f)
+            //console.log(this.f) <-----enable this for overlay readout
+        }
+
+        Pie.prototype.draw = function() {        
+            ctx.strokeStyle="rgba(207,0,38,0.4)";
+            ctx.lineWidth = lineW;
+            ctx.beginPath();
+        //update
+            ctx.arc(
+                origin,
+                origin,
+                radius,
+                (currentAngle*Math.PI/180)+rot,                   //start angle
+                ((currentAngle+(this.f/goal*360))*Math.PI/180)+rot,//end angle 
+                false);
+            ctx.stroke();
+            ctx.restore();
+             ctx.fillStyle="#ffffff";
+            ctx.beginPath();
+        //white center
+            ctx.arc(
+                origin,
+                origin,
+                27,
+                0*Math.PI/180,
+                360*Math.PI/180,
+                false);
+            ctx.fill();
+        }
+            
+        var pie = new Pie (0)            
+
+        animate()
+
+        function animate(){
+
+            requestAnimationFrame(animate)
+        
+        pie.update()
+        full ()
+        pie.draw()
+        }
+
+        function full(){
+        //box
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0,0,origin*2,origin*2);
+
+        //background    
+            ctx.strokeStyle="#ffa8ba";
+            ctx.lineWidth = lineW;
+            ctx.beginPath();
+            ctx.arc(
+                origin,
+                origin,
+                radius,
+                0*Math.PI/180,
+                360*Math.PI/180,
+                false);
+            ctx.stroke();
+            
+        //already met
+            ctx.strokeStyle="#ff1646";
+            ctx.lineWidth = lineW;
+            ctx.beginPath();
+            ctx.arc(
+                origin,
+                origin,
+                radius,
+                0*Math.PI/180+rot,
+                currentAngle*Math.PI/180+rot,
+                false);
+            ctx.stroke();
+            }
+            
+
+            function showCoords(evt){
+                //this breaks the chart into sectors
+                var eY = evt.layerY,
+                    eX = evt.layerX
+                    s1 = Math.round((Math.atan2(eX-origin,origin-eY))*180/Math.PI) 
+                    s2 = Math.round((Math.atan(((eY-origin)*-1)/(eX-origin)*-1)*180/Math.PI)+90)
+                    s3 = Math.round(270-((Math.atan((eY-origin)/(origin-eX)))*180/Math.PI))
+                    s4 = Math.round(270+(Math.atan((origin-eY)/((origin-eX)))*180/Math.PI))
+
+                if   
+                    (eX >= origin && eY <= origin)  
+                    {console.log(
+                        "sector 1", 
+                        "$"+Math.round(s1*(40/360)-current) 
+                        //-current counts the dollar value from the current amount
+                        )}
+                else if   
+                    (eX >= origin && eY >= origin)  
+                    {console.log(
+                        "sector 2",
+                        "$"+Math.round(s2*(40/360)-current)
+                        )}
+                else if   
+                    (eX <= origin && eY >= origin)  
+                    {console.log(
+                        "sector 3",
+                        "$"+Math.round(s3*(40/360)-current)
+                        )}
+                else if        
+                    (eX <= origin && eY <= origin)  
+                    {console.log(
+                        "sector 4",
+                        "$"+Math.round(s4*(40/360)-current)
+                        )};
+            
+            }
+            
+
+
+
+
+        </script>
+
+    </body>
+    
+</html>

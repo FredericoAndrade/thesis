@@ -1,0 +1,59 @@
+body{
+	margin:0px;
+	background:#f4f4f4;
+	font-family: 'Open Sans', sans-serif; color:#555555;	
+}
+
+#overlay{
+	display: block;
+	background: #fff;
+	width:500px;
+	height:800px;
+	border-radius: 3px;
+	margin: 30px;
+	padding-top: 30px;
+}
+
+#canvas,#input,h1#title,h1.goal{
+	display: block;
+	margin: auto;
+	clear:both;
+}
+
+#canvas{
+margin-top: 40px;
+margin-bottom: 40px;
+}
+
+h1.goal,h1#title{
+	text-align: center;
+}
+
+h1.goal{
+	height: 55px;
+	width: 200px;
+	background: rgba(255,255,255,0.4);
+	border:1px solid #e0e0e0; 
+	border-radius: 5px;
+	padding-top:10px; 
+}
+
+h1#title{
+	width:auto;
+	margin:40px 0px 7px 0px; 
+	font-size: 1.6em;
+}
+
+#input {
+	height:60px;
+	width: 190px;
+	padding-left:20px;
+	border:1px solid #dddddd; 
+	border-radius: 5px;
+	font-family: 'Open Sans', sans-serif;
+	color:#555555; 
+	font-size:3em;
+}
+
+
+ 
