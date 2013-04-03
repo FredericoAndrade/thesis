@@ -1,0 +1,581 @@
+
+/*============================= Document =================================*/
+@font-face {
+    font-family: 'thin';
+    src: url('../fonts/gotham-thin-webfont.eot');
+    src: url('../fonts/gotham-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gotham-thin-webfont.woff') format('woff'),
+         url('../fonts/gotham-thin-webfont.ttf') format('truetype'),
+         url('../fonts/gotham-thin-webfont.svg#gotham_thinregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'black';
+    src: url('../fonts/gotham-black-webfont.eot');
+    src: url('../fonts/gotham-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gotham-black-webfont.woff') format('woff'),
+         url('../fonts/gotham-black-webfont.ttf') format('truetype'),
+         url('../fonts/gotham-black-webfont.svg#gotham_blackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'thinitalic';
+    src: url('../fonts/gotham-thinitalic-webfont.eot');
+    src: url('../fonts/gotham-thinitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gotham-thinitalic-webfont.woff') format('woff'),
+         url('../fonts/gotham-thinitalic-webfont.ttf') format('truetype'),
+         url('../fonts/gotham-thinitalic-webfont.svg#gotham_thinitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url('../fonts/gotham-bold-webfont.eot');
+    src: url('../fonts/gotham-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gotham-bold-webfont.woff') format('woff'),
+         url('../fonts/gotham-bold-webfont.ttf') format('truetype'),
+         url('../fonts/gotham-bold-webfont.svg#gotham_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-family: 'black', 'raleway',sans-serif;
+    margin:none;
+    font-size: 1.2em;
+}
+
+body ul{
+    list-style-type: none;
+}
+
+#container{
+    width:100%;
+    height:100%;
+}
+
+#mainContent{
+    width:93%;
+    height: 100%;
+    padding-left:1.6%;
+}
+
+/*============================== General =================================*/
+#back, #mainContent, #action, #aid, #news, #news ul li, #news li.left, .socialMedias p{
+    float:left;
+}
+
+#head h1, #action h1, #aid h1{
+    color:#ff2c53;
+    font-weight: 900;
+    font-size: 3em;
+    line-height: 1em;
+    margin:20px 0px;
+}
+
+#action, #aid, #news{
+    width:30.3%;
+    height: 100%;
+}
+
+#action, #aid{
+    margin:0px 1.7%;
+}
+
+#action ul.parent, #aid ul.parent{
+    padding:0px;
+    margin-bottom: 0px;
+    //border:1px solid #e7e7e7;
+}
+
+
+#head a, #news h1{
+    color:#fff;
+    text-decoration: none;
+    padding:15px;
+}
+
+/*=============================== Colors =================================*/
+.blue{
+    color:#2889ff;
+}
+
+#head a, #news h1, #action ul.parent, #aid ul, .quickGift, .newOrg{
+    background: #e7e7e7;
+}
+
+#back, #login, .first, a.moreFriends:hover, .org, .goals{
+    background:#fafafa;
+}
+
+.first ul li, .socialPeople, .second li, .opp{
+    background:#ffffff;   
+}
+
+
+/*=============================== Back ===================================*/
+#back{
+    width:26px;
+    height: 100%;
+    border:1px solid #e6e6e6;
+}
+
+#back a{
+    display:block; 
+    width: 26px;
+    height:26px;
+    background:#cccccc;
+    background-image:url("../img/back.png");
+    background-repeat:no-repeat; 
+    background-position:40%;
+}
+
+/*=============================== Login ==================================*/
+
+#login{
+    float: right;
+    height: 100%;
+    border-left:1px solid #e6e6e6;
+    margin-top: -2px;
+    position:absolute;
+    z-index: 10;
+    right: 0px
+}
+
+#login a{
+    background:#ff2c53;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: .8em;
+    padding:6px 7px 4px 8px;
+    border-bottom:1px solid #cccccc;
+}
+
+/*============================= Main Head ================================*/
+
+#head{
+    width:100%;
+    clear:both;
+    overflow: auto;
+    margin: 0px;
+}
+
+#head h1{
+    font-size: 5em;
+    font-weight: 900;
+    float:left;
+    margin:20px 0px;
+    line-height: 1em;
+    width: 64%;
+    padding-left: 30px;
+}
+
+#head a{
+    float: right;
+    margin-top:20px;
+    font-size: 2em;
+    font-weight: 900;
+    width: 28.6%;
+    margin:26px .6% 0px 1.7%; 
+}
+
+/*============================ Main Content ==============================*/
+#content{
+    clear:both;
+    width:100%;
+    //overflow: auto;
+    margin-top: 40px;
+    height: 84%;
+}
+
+#action ul.parent, #aid ul.parent{
+    border-top:1px solid #ccc;
+    border-left:2px solid #f1f1f1;
+    border-right:2px solid #f1f1f1;
+}
+/*======================== Main Content Action ===========================*/
+.first{
+    padding:20px;
+    border-bottom:1px solid #e7e7e7;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+.first ul{
+    padding:0px;
+}
+.first ul li{
+    padding:0px;
+}
+
+.socialMedias{
+    height:72px;
+    padding:0px 0px 0px 20px;
+}
+
+a.smE, a.smT, a.smF{
+    height:48px;
+    width: 48px;
+    background-repeat: no-repeat;
+    background-position:center; 
+    float:right;
+    margin:11px 20px 11px 11px;
+    opacity: .4
+}
+
+a.smE:hover, a.smT:hover, a.smF:hover{
+    opacity: 1;
+}
+
+a.smE{
+    background-image:url("../img/mail.png");
+}
+
+a.smT{
+    background-image:url("../img/twitter.png");
+}
+
+a.smF{
+    background-image:url("../img/facebook.png");
+}
+
+.socialMedias img{
+    float:right;
+    margin-right: 20px;
+    margin:11px;
+}
+
+.socialMedias p{
+    margin: 20px 0px 0px 0px;
+}
+
+.socialPeople{
+    width: 100%;
+    border-bottom:1px solid #e7e7e7;
+    font-family: "thin";
+    padding-top:5px;
+    clear: both;
+    overflow: auto;
+}
+
+.socialPeople div{
+    display: block;
+    padding:0px 70px;
+    margin: auto;
+}
+
+.socialPeople a.friend{
+    height: 90px;
+    width: 90px;
+    float: left;
+    background-image: url("../img/faces.png");
+    background-repeat: no-repeat;
+    margin:0px 4px 4px 0px;
+    border-radius: 3px;
+}
+
+.one{
+    background-position:5% 14%;
+    background-size: 490%; 
+}
+.two{
+    background-position:34% 14%;
+    background-size: 490%; 
+}
+.three{
+    background-position:63% 14%;
+    background-size: 490%; 
+}
+.four{
+    background-position:92% 14%;
+    background-size: 490%; 
+}
+.five{
+    background-position:5% 90%;
+    background-size: 490%; 
+}
+.six{
+    background-position:34% 90%;
+    background-size: 490%; 
+}
+.seven{
+    background-position:63% 90%;
+    background-size: 490%; 
+}
+.eight{
+    background-position:92% 90%;
+    background-size: 490%; 
+}
+
+.socialPeople img{
+    margin-bottom:4px; 
+}
+
+ul.second{
+    margin:0px;
+    padding:0px;
+    font-family:"thin", "raleway", sans-serif; 
+}
+
+.second li{
+    padding:20px;
+    border-bottom:1px solid #e7e7e7;
+    font-weight: 100;
+    font-size: 1.2em;
+}
+
+#action .moreFriends, #news .moreTweets{
+    display: block;
+    width: 99%;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    line-height: .1em;
+    height: 26px;
+    border-top: 1px dotted #f1f1f1;
+    clear: both;
+    font-size: 2em;
+}
+
+#action .moreFriends{
+    letter-spacing: 0.2em;
+}
+
+#news .moreTweets{
+    font-family: "thin";
+    letter-spacing: 0.5em;
+}
+
+/*========================= Main Content Aid =============================*/
+.org{
+    padding:10px 10px 0px 10px;  
+    overflow: auto;
+}
+
+.quickGift{
+    padding:26px 20px 27px 20px;
+    border-radius: 3px;
+    border:0px;
+    font-family: "thinitalic";
+    font-size: 1.1em;
+    width:40%;
+}
+
+.orgLogo{
+    height:80px;
+    width: 80px;
+    float: left;
+    border-radius: 5px;
+    background:#2889ff;
+    opacity: .4;
+    background-image: url("../img/org.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
+.orgInfo{
+    float:left;
+    width: 100%;
+    clear: both;
+    font-family: "bold";
+    font-size: 1.2em;
+}
+
+.orgInfo p, .quickGift{
+    float: left;
+}
+
+.orgInfo p{
+    margin:24px 20px;
+}
+
+.orgInfo img{
+    margin-top: 16px;
+    margin-right: 7px;
+    float: right;
+}
+
+.orgDesc{
+    float: left;
+    width: 100%;
+    clear: both;
+    font-family: "thin";
+    margin: 10px 0px 0px 0px;
+}
+
+.more{
+    color:#888;
+    font-family: "thinitalic";
+    text-decoration: none;
+    width: 100%;
+    float: left;
+    padding:10px 0px; 
+}
+
+.more:hover{
+    background: #fcfcfc;
+}
+
+.goals{
+    padding:0px 10px 10px 10px;
+    border-bottom:1px solid #e7e7e7; 
+    font-family: "thin";
+    color:#888;
+}
+
+.goals p{
+    border-top:1px solid #e6e6e6; 
+    margin:0px;
+    padding-top:10px;
+}
+
+.opp{
+    height:100%;
+    border-bottom:1px solid #e7e7e7; 
+    clear: both;
+    width:100%;
+    overflow: auto;
+}
+
+.donate{
+    height: 106px;
+    width: 6%;
+    padding: 0px 1.6%;
+    float: right;
+    background:#fafafa;
+    background-image: url("../img/don.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.donate:hover{
+    background:#f1f1f1;
+    background-image: url("../img/don.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.opp:last-child{
+    border:none;
+}
+
+.opp p{
+    float:left;
+    width:80%;
+    font-family: "thin";
+    padding:25px 20px;
+    margin:0px; 
+}
+
+.opp img{
+    float:right;
+}
+
+.detail{
+    font-family: "black";
+    color: rgba(40,137,255,0.6);
+}
+
+.newOrg{
+    padding: 20px;
+    text-align: center;
+    font-family: "thinitalic";
+    text-shadow:#fafafa -1px -1px;
+    clear:both;
+    border-top:2px solid #ccc;
+    margin-top: 0px
+}
+
+
+
+
+/*========================= Main Content News ============================*/
+#news{
+    margin:0px 0.6% 0px 1.7%;
+}
+
+#news h1{
+    margin:10px 0px 4px 0px;
+}
+
+#news ul{
+    margin:0px;
+    padding: 0px;
+}
+
+#news ul a{
+    overflow: auto;
+}
+
+#news div{
+    clear:both;
+}
+
+.source{
+    width:65px;
+    height:65px;
+    color:#ffffff;
+    text-align: center;
+}
+
+#news ul a:first-child li{
+    background-image:url("../img/twitterS.png");
+    background-repeat: no-repeat;
+    background-position:center; 
+    background-size: 70%;
+}
+
+#news .left{
+    border-right:2px solid #ffffff;
+    background:rgb(231,231,231);
+    opacity:0.4;
+}
+
+#news a .left:hover{
+    opacity:.6;
+}
+
+.sSelected{
+    opacity: 1;
+    background:rgb(231,231,231);
+    border-right:2px solid #ffffff;
+}
+
+#news a .sSelected:hover{
+    background:#e3e3e3; 
+}
+
+#news ul a:first-child li:hover{
+    background:#e3e3e3;
+    background-image:url("../img/twitterS.png");
+    background-repeat: no-repeat;
+    background-position:center; 
+    background-size: 70%;
+}
+
+#news .add{
+    float: right;
+    background-image:url("../img/+s.png");
+    background-repeat: no-repeat;
+    background-position:center; 
+}
+
+#news .add:active{
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+

@@ -6,7 +6,7 @@
         <link href="style.css" rel="stylesheet" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
         <title>FREDERICO ANDRADE - INTERACTION DESIGNER - Thesis Functionality Protoype 01</title>
-        <script>var goal=40,
+        <script>var goal=500,
         			current = 14,//monetary value
                     origin = 175,
                     radius = 100,
@@ -21,7 +21,7 @@
         <h1 class="goal">Funded: $<script type="text/javascript">document.write(current);
     </script></h1>
         <h1 id="title">Gift</h1>
-        <input id="input" type="number" min="0" step="1" value='0' /><!--Value does not change based on fill Value-->
+        <span class="currency">$</span><input id="input" name="currency" type="number" min="0" step="1" value='0' /><!--Value does not change based on fill Value-->
 </div>    
         <script>
 		var canvas = document.getElementById('canvas'),
@@ -128,26 +128,26 @@
                     (eX >= origin && eY <= origin)  
                     {console.log(
                         "sector 1", 
-                        "$"+Math.round(s1*(40/360)-current) 
+                        "$"+Math.round(s1*(goal/360)-current) 
                         //-current counts the dollar value from the current amount
                         )}
                 else if   
                     (eX >= origin && eY >= origin)  
                     {console.log(
                         "sector 2",
-                        "$"+Math.round(s2*(40/360)-current)
+                        "$"+Math.round(s2*(goal/360)-current)
                         )}
                 else if   
                     (eX <= origin && eY >= origin)  
                     {console.log(
                         "sector 3",
-                        "$"+Math.round(s3*(40/360)-current)
+                        "$"+Math.round(s3*(goal/360)-current)
                         )}
                 else if        
                     (eX <= origin && eY <= origin)  
                     {console.log(
                         "sector 4",
-                        "$"+Math.round(s4*(40/360)-current)
+                        "$"+Math.round(s4*(goal/360)-current)
                         )};
             
             }
