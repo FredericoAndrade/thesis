@@ -118,7 +118,7 @@ body ul{
 }
 
 .first ul li, .socialPeople, .second li, .opp{
-    background:#ffffff;   
+    background:#ffffff;
 }
 
 
@@ -130,12 +130,12 @@ body ul{
 }
 
 #back a{
-    display:block; 
+    display:block;
     width: 26px;
     height:26px;
     background:#cccccc;
     background-image:url("../img/back.png");
-    background-repeat:no-repeat; 
+    background-repeat:no-repeat;
     background-position:40%;
 }
 
@@ -186,7 +186,7 @@ body ul{
     font-size: 2em;
     font-weight: 900;
     width: 28.6%;
-    margin:26px .6% 0px 1.7%; 
+    margin:26px .6% 0px 1.7%;
 }
 
 /*============================ Main Content ==============================*/
@@ -227,7 +227,7 @@ a.smE, a.smT, a.smF{
     height:48px;
     width: 48px;
     background-repeat: no-repeat;
-    background-position:center; 
+    background-position:center;
     float:right;
     margin:11px 20px 11px 11px;
     opacity: .4
@@ -286,45 +286,45 @@ a.smF{
 
 .one{
     background-position:5% 14%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 .two{
     background-position:34% 14%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 .three{
     background-position:63% 14%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 .four{
     background-position:92% 14%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 .five{
     background-position:5% 90%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 .six{
     background-position:34% 90%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 .seven{
     background-position:63% 90%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 .eight{
     background-position:92% 90%;
-    background-size: 490%; 
+    background-size: 490%;
 }
 
 .socialPeople img{
-    margin-bottom:4px; 
+    margin-bottom:4px;
 }
 
 ul.second{
     margin:0px;
     padding:0px;
-    font-family:"thin", "raleway", sans-serif; 
+    font-family:"thin", "raleway", sans-serif;
 }
 
 .second li{
@@ -359,7 +359,7 @@ ul.second{
 
 /*========================= Main Content Aid =============================*/
 .org{
-    padding:10px 10px 0px 10px;  
+    padding:10px 10px 0px 10px;
     overflow: auto;
 }
 
@@ -421,7 +421,7 @@ ul.second{
     text-decoration: none;
     width: 100%;
     float: left;
-    padding:10px 0px; 
+    padding:10px 0px;
 }
 
 .more:hover{
@@ -430,20 +430,20 @@ ul.second{
 
 .goals{
     padding:0px 10px 10px 10px;
-    border-bottom:1px solid #e7e7e7; 
+    border-bottom:1px solid #e7e7e7;
     font-family: "thin";
     color:#888;
 }
 
 .goals p{
-    border-top:1px solid #e6e6e6; 
+    border-top:1px solid #e6e6e6;
     margin:0px;
     padding-top:10px;
 }
 
 .opp{
     height:100%;
-    border-bottom:1px solid #e7e7e7; 
+    border-bottom:1px solid #e7e7e7;
     clear: both;
     width:100%;
     overflow: auto;
@@ -476,7 +476,7 @@ ul.second{
     width:80%;
     font-family: "thin";
     padding:25px 20px;
-    margin:0px; 
+    margin:0px;
 }
 
 .opp img{
@@ -533,7 +533,7 @@ ul.second{
 #news ul a:first-child li{
     background-image:url("../img/twitterS.png");
     background-repeat: no-repeat;
-    background-position:center; 
+    background-position:center;
     background-size: 70%;
 }
 
@@ -554,14 +554,14 @@ ul.second{
 }
 
 #news a .sSelected:hover{
-    background:#e3e3e3; 
+    background:#e3e3e3;
 }
 
 #news ul a:first-child li:hover{
     background:#e3e3e3;
     background-image:url("../img/twitterS.png");
     background-repeat: no-repeat;
-    background-position:center; 
+    background-position:center;
     background-size: 70%;
 }
 
@@ -569,7 +569,7 @@ ul.second{
     float: right;
     background-image:url("../img/+s.png");
     background-repeat: no-repeat;
-    background-position:center; 
+    background-position:center;
 }
 
 #news .add:active{
