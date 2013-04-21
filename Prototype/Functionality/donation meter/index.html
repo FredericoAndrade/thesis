@@ -26,7 +26,8 @@
         <script>
 //mathematic values
         var goal=100,
-			current = 14
+			current = 22,
+            target = []
 //modifier
         var currentAngle = (current/goal)*360
         </script>
@@ -51,17 +52,29 @@
                     </script>
 
                 </h1>
-
-                <input
-                    id="input"
-                    name="currency"
-                    type="number"
-                    step="1"
-                    min="0"
-                    value='0'/>
-                    <!--Value does not change based on fill Value-->
             </div>
 
+             <div id="valueBox">
+
+                    <canvas
+                        id="val"
+                        width="100px"
+                        height="57px">
+                    </canvas>
+
+                    <input
+                        id="input"
+                        name="currency"
+                        type="number"
+                        step="1"
+                        min="0"
+                        value='0'
+                        />
+                        <!--Value does not change based on fill Value-->
+                </div>
+
+
+            <!--on click - fires event-->
             <canvas
                 onmousedown="showCoords(event)"
                 id="canvas"
@@ -73,16 +86,19 @@
 
         <script>
 		var canvas = document.getElementById('canvas'),
-            ctx = canvas.getContext('2d')
+            ctx = canvas.getContext('2d'),
+            valueCanvas =document.getElementById('val'),
+            c2 = valueCanvas.getContext('2d')
 
 //graphic values
         var origin = 175,
             radius = 100,
             lineW = 1.5*(radius),
             core = (radius/3.5),
-            target = [],
-            rot = Math.PI*-.5
-            document.getElementById("input").addEventListener("change",false)
+            rot = Math.PI*-.5,
+            bColor = '#F4F4F4', //#ffa8ba pink
+            metColor = "rgba(255,22,70,.85)",
+            tarColor = "rgba(154,22,70,.85)"
 
 
 //pie-chart mouse-click value log
@@ -91,56 +107,59 @@
                 eX = evt.layerX,
                 //this breaks the chart into sectors
                 //then it figures out the angle of the click from the origin
-                s1 = Math.round((Math.atan2(eX-origin,origin-eY))*180/Math.PI),
-                s2 = Math.round((Math.atan(((eY-origin)*-1)/(eX-origin)*-1)*180/Math.PI)+90),
-                s3 = Math.round(270-((Math.atan((eY-origin)/(origin-eX)))*180/Math.PI)),
-                s4 = Math.round(270+(Math.atan((origin-eY)/((origin-eX)))*180/Math.PI))
+                s1 = (Math.atan2(eX-origin,origin-eY))*180/Math.PI,
+                s2 = (Math.atan(((eY-origin)*-1)/(eX-origin)*-1)*180/Math.PI)+90,
+                s3 = 270-((Math.atan((eY-origin)/(origin-eX)))*180/Math.PI),
+                s4 = 270+(Math.atan((origin-eY)/((origin-eX)))*180/Math.PI)
 
         //then it converts it to dollar value
             if
                 (eX >= origin && eY <= origin)
-                {target.push(Math.round(s1*(goal/360)-current))}
+                {target=(s1*(goal/360)-current)}
             else if
                 (eX >= origin && eY >= origin)
-                {target.push(Math.round(s2*(goal/360)-current))}
+                {target=(s2*(goal/360)-current)}
             else if
                 (eX <= origin && eY >= origin)
-                {target.push(Math.round(s3*(goal/360)-current))}
+                {target=(s3*(goal/360)-current)}
             else if
                 (eX <= origin && eY <= origin)
-                {target.push(Math.round(s4*(goal/360)-current))}
+                {target=(s4*(goal/360)-current)}
 
-                console.log(target)
+        console.log('$'+Math.round(target))
+        document.getElementById('input').value=Math.round(target);
+
         }
-
-
 
 //constructor
         function Pie(f){
-            this.f=f//finish angle
+            this.f=f
+//finish angle
         }
-
 
 //prototype
         Pie.prototype.update = function() {
+            if(showCoords){this.f += (target-this.f)/5;}
+            else if(/*i dont know what to put here*/a){
             this.f += (document.getElementById("input").value - this.f) / 5;
             this.f == (document.getElementById("canvas").onmousedown.value - this.f)
-            //console.log(this.f) //<-----enable this for overlay readout
+        }
+
         }
 
         Pie.prototype.draw = function() {
-            ctx.strokeStyle="rgba(207,0,38,0.4)";
+            ctx.strokeStyle=tarColor;
             ctx.lineWidth = lineW;
             ctx.beginPath();
-        //update
+//update
             ctx.arc(
                 origin,
                 origin,
                 radius,
+            //start angle
                 (currentAngle*Math.PI/180)+rot,
-                //start angle
+            //end angle
                 ((currentAngle+(this.f/goal*360))*Math.PI/180)+rot,
-                //end angle
                 false);
             ctx.stroke();
             ctx.restore();
@@ -175,7 +194,7 @@
             ctx.fillRect(0,0,origin*2,origin*2);
 
         //background
-            ctx.strokeStyle="#ffa8ba";
+            ctx.strokeStyle=bColor;
             ctx.lineWidth = lineW;
             ctx.beginPath();
             ctx.arc(
@@ -188,7 +207,7 @@
             ctx.stroke();
 
         //already met
-            ctx.strokeStyle="#ff1646";
+            ctx.strokeStyle=metColor;
             ctx.lineWidth = lineW;
             ctx.beginPath();
             ctx.arc(
@@ -200,6 +219,31 @@
                 false);
             ctx.stroke();
             }
+
+        function valBox () {
+            c2.fillStyle="rgba(250,250,250,.96)";
+            c2.strokeStyle="rgba(245,245,245,.96)";
+            c2.beginPath();
+            c2.lineTo(15,0);
+            c2.lineTo(0,27);
+            c2.lineTo(15,54);
+            c2.lineTo(100,54);
+            c2.lineTo(100,0);
+            c2.closePath();
+            c2.fill();
+            c2.stroke();
+
+            c2.strokeStyle="rgba(167,205,250,.36)";
+            c2.beginPath();
+            c2.lineWidth='3';
+            c2.moveTo(0,29);
+            c2.lineTo(15,55);
+            c2.lineTo(100,55);
+            c2.stroke();
+
+        }
+
+        valBox()
         </script>
 
     </body>
