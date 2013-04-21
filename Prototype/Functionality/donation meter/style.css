@@ -1,23 +1,27 @@
 body{
 	margin:0px;
-	background:#f4f4f4;
+	background:#ccc;
 	font-family: 'Open Sans', sans-serif; color:#555555;
 	font-size:.6em;
+
 }
 
 #overlay{
 	display: block;
-	background: rgba(255,255,255,0.4);
+
 	width:448px;
 	border-radius: 3px;
 	margin: 20px auto;
-	padding-top: 30px;
 	padding-bottom:10px;
 }
 
 #readout{
 	overflow: auto;
-	padding-left: 5%;
+	border-bottom: 3px solid rgba(242,242,242,.94);
+}
+
+#canvas{
+	background:rgba(255,255,255,0.9);
 }
 
 #canvas,h1#title{
@@ -26,19 +30,40 @@ body{
 	clear:both;
 }
 
-#canvas{
-margin-top: 40px;
-margin-bottom: 40px;
-}
-
-
 h1.goal{
-	float:left;
-	margin-right:5px;
-	background: rgba(220,220,220,0.2);
+	font-size: 1.7em;
+	font-weight:300;
+	margin:0px;
 	border:0px solid #e0e0e0;
 	border-radius: 0px;
-	padding:10px;
+}
+
+h1.goal:first-child{
+	padding:20px 99px;
+	float:left;
+	background:rgba(255,255,255,0.94);
+	border-top-left-radius: 15px;
+	border-right:4px solid rgba(242,242,242,0.94);
+}
+
+h1.goal:last-child{
+	background: rgba(245,245,245,1);
+	float:right;
+	padding:20px 40px 20px 40px;
+	border-top-right-radius: 15px;
+}
+
+.info{
+	font-weight: 300;
+	font-style: italic;
+	font-size: 1.4em;
+	background:rgba(255,255,255,0.97);
+	border:1px solid rgb(245,245,245);
+text-align: center;
+margin:0px;
+padding:13px 0px;
+border-bottom-left-radius:15px;
+border-bottom-right-radius:15px;
 }
 
 h1#title{
@@ -48,11 +73,17 @@ h1#title{
 }
 
 #valueBox{
+	display:none;
 	position:absolute;
 	z-index: 15;
 	height:57px;
 	width:100px;
 	left:100px;
+	margin-top:-27px;
+}
+
+.bold{
+	font-weight: 700;
 }
 
 #input {
@@ -60,15 +91,29 @@ h1#title{
 	z-index: 25;
 	background:rgba(255,255,255,0);
 	float: left;
-	width: 60px;
+	width: 52px;
 	clear: none;
 	margin: 0px 0px 0px 9px;
-	padding: 9px 7px 11px 21px;
+	padding: 14px 7px 11px 21px;
 	outline:none;
 	border:none;
 	font-family: 'Open Sans', sans-serif;
 	color:#555555;
-	font-size:2.5em;
+	font-size:2.0em;
+	font-weight: 300;
+	font-style: italic;
+}
+
+#inputCurrency{
+	font-style: italic;
+	position:relative;
+	width:10px;
+	float:left;
+	font-size: 2em;
+	margin:0px;
+	top:14px;
+	left:29px;
+	z-index: 26;
 }
 
 #val{
