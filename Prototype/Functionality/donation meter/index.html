@@ -90,6 +90,9 @@
             valueCanvas =document.getElementById('val'),
             c2 = valueCanvas.getContext('2d')
 
+            document.getElementById("input").addEventListener("change",false)
+
+
 //graphic values
         var origin = 175,
             radius = 100,
@@ -98,7 +101,10 @@
             rot = Math.PI*-.5,
             bColor = '#F4F4F4', //#ffa8ba pink
             metColor = "rgba(255,22,70,.85)",
-            tarColor = "rgba(154,22,70,.85)"
+            tarColor = "rgba(154,22,70,.85)",
+            ease = 5,
+            tarX =[],
+            tarY =[]
 
 
 //pie-chart mouse-click value log
@@ -126,25 +132,35 @@
                 (eX <= origin && eY <= origin)
                 {target=(s4*(goal/360)-current)}
 
-        console.log('$'+Math.round(target))
+        //console.log('$'+Math.round(target))
+
+        //make input field show click value
         document.getElementById('input').value=Math.round(target);
 
+        //see line 177 for tar2
+        tarX=eX+780
+        tarY=eY+130
+
+        console.log(tarY)
+
+        tarBox()
         }
 
 //constructor
         function Pie(f){
-            this.f=f
 //finish angle
+            this.f=f
         }
 
 //prototype
         Pie.prototype.update = function() {
-            if(showCoords){this.f += (target-this.f)/5;}
-            else if(/*i dont know what to put here*/a){
-            this.f += (document.getElementById("input").value - this.f) / 5;
-            this.f == (document.getElementById("canvas").onmousedown.value - this.f)
-        }
+            if(showCoords){this.f += (target-this.f)/ease;}
 
+            //does not work
+            else {
+            this.f += (document.getElementById("input").value - this.f) / ease;
+            this.f == (document.getElementById("canvas").onmousedown.value - this.f)
+            }
         }
 
         Pie.prototype.draw = function() {
@@ -163,18 +179,21 @@
                 false);
             ctx.stroke();
             ctx.restore();
-            //ctx.fillStyle="#ffffff";
-            ctx.beginPath();
-        //white center
-            ctx.arc(
-                origin,
-                origin,
-                core,
-                0*Math.PI/180,
-                360*Math.PI/180,
-                false);
-            ctx.fill();
+
+//tar2 is the radian end angle
+
         }
+
+        function tarBox() {
+            var vBox = document.getElementById('valueBox');
+            vBox.style.left=tarX+'px';
+            vBox.style.top=tarY+'px';
+
+        }
+
+
+
+
 
         var pie = new Pie (0)
 
@@ -190,8 +209,7 @@
         //re-draw the full chart on under the updated arc
         function full(){
         //box
-            ctx.fillStyle = "rgba(255,255,255,0)";
-            ctx.fillRect(0,0,origin*2,origin*2);
+            ctx.clearRect(0,0,origin*2,origin*2);
 
         //background
             ctx.strokeStyle=bColor;
